@@ -1,38 +1,241 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
+  width: 100%;
+  height: 200vh;
+  background-color: hsl(235, 21%, 11%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-family: Josefin Sans;
+}
+.container1 {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-image: url("/public/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#input {
+  width: 33%;
+  height: auto;
+  outline: none;
+  border: none;
+  background-color: hsl(235, 24%, 19%);
+  padding: 1rem 2rem;
+  font-family: Josefin Sans;
+  color: aliceblue;
+  font-size: 1.1rem;
+}
+.subcon {
+  width: 100%;
+  height: 18%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#addbtn {
+  width: 10%;
+  height: 100%;
+  background-color: green;
+  padding: 0.5rem 0.6rem;
+}
+h3 {
+  color: azure;
+  margin-bottom: 2rem;
+  letter-spacing: 1rem;
+}
+.container2 {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  color: white;
+  list-style-type: none;
+  background-color: hsl(235, 21%, 11%);
+}
+.subcon2 {
+  width: 33%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -3rem;
+}
+.eachtodo {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgb(70, 64, 64);
+  padding: 1rem 2rem;
+  color: hsl(234, 39%, 85%);
+  background-color: hsl(235, 24%, 19%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.eachtodo input {
+  margin-right: 1.5rem;
+}
+input[type="radio"] {
+  accent-color: rgb(87, 221, 255);
+}
+#delete {
+  background-color: transparent;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  color: rgb(176, 170, 159);
+}
+.line-through {
+  text-decoration: line-through;
+}
+.notline {
+  text-decoration: none;
+}
+#striketodo {
+  display: flex;
+  flex-direction: row;
+}
+
+.todosummary {
+  width: 100%;
+  height: auto;
+  padding: 1rem 1.2rem;
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(233, 14%, 35%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.stages {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.todosummary p:hover {
+  transition: 1ms solid;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.active-filter {
+  color: blue;
 }
 
-@keyframes App-logo-spin {
+.app_title p {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  color: white;
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: Josefin Sans;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end none;
+}
+
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* Todec.css */
+
+.animated-text {
+  text-align: center;
+  margin: 20px;
+}
+
+.animated-text h1 {
+  font-size: 24px;
+  color: #ffffff;
+  animation: fadeScale 5s infinite;
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scroll_up {
+  text-align: center;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.block {
+  background-color: #ffffff;
+  width: 100%;
+  height: 20rem;
+}
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 15%;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: auto;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+
+@media  (min-width = 0px) and (max-width = 660px) {
+  .subcon2{
+    width: 100%;
+    border: 1px solid red;
   }
 }
